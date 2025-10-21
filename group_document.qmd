@@ -30,6 +30,12 @@ expand.grid(x = xy,
   coord_polar()
 ```
 
+### s253710 (Henrique) section
+
+```{r}
+print('Hi')
+```
+
 ### New feature
 
 ```{r}
