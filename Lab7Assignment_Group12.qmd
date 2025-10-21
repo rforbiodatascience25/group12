@@ -9,7 +9,12 @@ authors: "s132347(Sofie Emilie Hagelund), s253710(Henrique Gomes), s253689(Paula
 
 ## Load Libraries
 
-```{r} #| message: false  library(tidyverse) library(broom) library(ggrepel)}
+```{r}
+#| message: false  
+
+library(tidyverse) 
+library(broom)  # devtools::install_github("tidymodels/broom")
+library(cowplot)
 ```
 
 ## 
