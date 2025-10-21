@@ -43,3 +43,11 @@ gravier_clean <- gravier |>
 ```{r}
 print('Hi')
 ```
+
+#### New Feature
+
+This code prints the word 'Hello'
+
+```{r}
+print('Hello')
+```
