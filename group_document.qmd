@@ -4,17 +4,6 @@ format: html
 editor: visual
 ---
 
-# \<\<\<\<\<\<\< HEAD
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
 ### s132347 (Sofie) section:
 
 ```{r}
@@ -22,7 +11,7 @@ The `echo: false` option disables the printing of code (only output is displayed
 print("Hello World")
 ```
 
-### s252750 (Sylvia) section
+## s252750 (Sylvia) section
 
 ```{r}
 xy <- seq(from = -3,
@@ -39,4 +28,12 @@ expand.grid(x = xy,
              size = 0) +
   theme_void() +
   coord_polar()
+```
+
+### New feature
+
+```{r}
+gravier_clean <- gravier |>
+  bind_cols() |>
+  as_tibble()
 ```
