@@ -11,7 +11,18 @@ editor: visual
 print("Hello World")
 ```
 
-## s252750 (Sylvia) section
+#### New feature
+
+Here is some random text that I am supposed to write.
+
+Here is a code:
+
+```{r}
+
+print(1+2)
+```
+
+### s252750 (Sylvia) section
 
 ```{r}
 xy <- seq(from = -3,
@@ -28,6 +39,12 @@ expand.grid(x = xy,
              size = 0) +
   theme_void() +
   coord_polar()
+```
+
+### s253710 (Henrique) section
+
+```{r}
+print('Hi')
 ```
 
 ### New feature
