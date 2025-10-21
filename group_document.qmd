@@ -41,16 +41,24 @@ expand.grid(x = xy,
   coord_polar()
 ```
 
-### s253710 (Henrique) section
-
-```{r}
-print('Hi')
-```
-
 ### New feature
 
 ```{r}
 gravier_clean <- gravier |>
   bind_cols() |>
   as_tibble()
+```
+
+### s253710 (Henrique) section
+
+```{r}
+print('Hi')
+```
+
+#### New Feature
+
+This code prints the word 'Hello'
+
+```{r}
+print('Hello')
 ```
