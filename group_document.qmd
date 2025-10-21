@@ -68,3 +68,11 @@ print('Hello')
 ```{r}
 print("Hello")
 ```
+
+#### New Feature
+
+prints Hello
+
+```{r}
+print("Hello")
+```
