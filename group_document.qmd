@@ -62,3 +62,9 @@ This code prints the word 'Hello'
 ```{r}
 print('Hello')
 ```
+
+### s253689 (Paula) section
+```{r}
+print("Hello")
+```
+
