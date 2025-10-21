@@ -22,6 +22,17 @@ The `echo: false` option disables the printing of code (only output is displayed
 print("Hello World")
 ```
 
+#### New feature
+
+Here is some random text that I am supposed to write.
+
+Here is a code:
+
+```{r}
+
+print(1+2)
+```
+
 ### s252750 (Sylvia) section
 
 ```{r}
