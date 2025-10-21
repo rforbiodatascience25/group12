@@ -36,6 +36,10 @@ pca_fit <- biopsy %>%
 
 ## Visualization
 
+Below is a graph for visualization.
+
+The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two principal components (PC1 and PC2). Clustering of data clearly indicates that the PCA captures meaningful variation related to the outcome type.
+
 ```{r}
 pca_fit %>% 
   augment(biopsy) %>% 
