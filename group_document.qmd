@@ -4,23 +4,23 @@ format: html
 editor: visual
 ---
 
-## Quarto
+### s252750 
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Throwback
 
 ```{r}
-1 + 1
+xy <- seq(from = -3,
+          to = 3, 
+          by = 0.01)
+expand.grid(x = xy,
+            y = xy) |>
+  ggplot(
+    mapping = aes(
+      x = (1 - x - sin(y^2)),
+      y = (1 + y - cos(x^2)))) +
+  geom_point(alpha = 0.05,
+             shape = 20,
+             size = 0) +
+  theme_void() +
+  coord_polar()
 ```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
