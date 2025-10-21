@@ -13,8 +13,41 @@ authors: "s132347(Sofie Emilie Hagelund), s253710(Henrique Gomes), s253689(Paula
 #| message: false  
 
 library(tidyverse) 
-library(broom)  # devtools::install_github("tidymodels/broom")
+library(broom)  
 library(cowplot)
 ```
 
-## 
+## Load Data
+
+```{r}
+biopsy <- read_csv(
+  "https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv",
+  show_col_types = FALSE)
+```
+
+## PCA
+
+```{r}
+pca_fit <- biopsy %>% 
+  select(where(is.numeric)) %>% 
+  scale() %>% 
+  prcomp() 
+```
+
+## Visualization
+
+```{r}
+pca_fit %>% 
+  augment(biopsy) %>% 
+  ggplot(aes(
+    x = .fittedPC1, 
+    y = .fittedPC2,
+    color = outcome)) +
+  geom_point(
+    alpha = 0.7, 
+    size = 1.0) +
+  theme_minimal() +
+  theme(axis.line = element_line())
+  
+  
+```
