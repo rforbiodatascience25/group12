@@ -57,11 +57,6 @@ pca_fit %>%
 ```
 
 ```{r}
-pca_fit %>%
-  tidy(matrix = "rotation")
-```
-
-```{r}
 arrow_style <- arrow(
   angle = 20, ends = "first", type = "closed", length = grid::unit(8, "pt")
 )
@@ -79,4 +74,17 @@ pca_fit %>%
   xlim(-1.25, .5) + ylim(-.5, 1) +
   coord_fixed() + 
   theme_minimal_grid(12)
+```
+
+```{r}
+pca_fit %>%
+  tidy(matrix = "eigenvalues") %>%
+  ggplot(aes(PC, percent)) +
+  geom_col(fill = "#56B4E9", alpha = 0.8) +
+  scale_x_continuous(breaks = 1:9) +
+  scale_y_continuous(
+    labels = scales::percent_format(),
+    expand = expansion(mult = c(0, 0.01))
+  ) +
+  theme_minimal_hgrid(12)
 ```
