@@ -37,9 +37,7 @@ pca_fit <- biopsy %>%
 
 ## Visualization
 
-Below is a graph for visualization.
-
-The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two principal components (PC1 and PC2). Clustering of data clearly indicates that the PCA captures meaningful variation related to the outcome type.
+Below are a few graphs for visualization.
 
 ```{r}
 pca_fit %>% 
@@ -58,11 +56,16 @@ pca_fit %>%
   theme_minimal() +
   theme(
     axis.line = element_line()
-    )
+    ) +
+  labs(
+    title = "Projection of Tumor Samples onto the First Two Principal Components"
+  )
 
   
   
 ```
+
+The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two principal components (PC1 and PC2). The x-axis represents the first Principle Component, and the y-axis represents the second Principle Component. Clustering of data indicates that the PCA captures meaningful variation related to the outcome type.
 
 ```{r}
 arrow_style <- arrow(
@@ -97,5 +100,10 @@ pca_fit %>%
     labels = scales::percent_format(),
     expand = expansion(mult = c(0, 0.01))
   ) +
-  theme_minimal_hgrid(12)
+  theme_minimal_hgrid(12) +
+  labs(
+    title = "Variance of principle components"
+  )
 ```
+
+The bar plot shows the percentage of variance captured by each principle component. The x-axis represents the components, and the y-axis indicates the percentage of the variance. The PC1 is about 65% of the total variance, followed by PC2 with about 9%. This means that most of the data can be summarized using the first two components.
