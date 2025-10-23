@@ -57,13 +57,14 @@ pca_fit %>%
     alpha = 0.7, 
     size = 1.0
     ) +
-  theme_minimal() +
-  theme(
-    axis.line = element_line()
-    ) +
   labs(
     title = "Projection of Tumor Samples onto the First Two Principal Components"
-  )
+  ) +
+  theme_minimal() +
+  theme(
+    axis.line = element_line(),
+    plot.title = element_text(face="bold")
+    )
 ```
 
 The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two Principal Components (PC1 and PC2). The x-axis represents the first Principle Component, and the y-axis represents the second Principle Component. Clustering of data indicates that the PCA captures meaningful variation related to the outcome type.
