@@ -76,3 +76,9 @@ prints Hello
 ```{r}
 print("Hello")
 ```
+
+### s253719 (Eszti) section
+
+```{r}
+print("Hej")
+```
