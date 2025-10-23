@@ -87,8 +87,13 @@ pca_fit %>%
   ) +
   xlim(-1.25, .5) + ylim(-.5, 1) +
   coord_fixed() + 
-  theme_minimal_grid(12)
+  theme_minimal_grid(12) + 
+  labs(
+    title = "Variable Biplot (PC1 vs. PC2)"
+  )
 ```
+
+The above plot displays how the variables contribute to the first two Principle Components. Each arrow represents one variable. The direction of the arrows shows how the variable correlates with the components and the length of the arrows show how strongly that variable correlates with the variables.
 
 ```{r}
 pca_fit %>%
