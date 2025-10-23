@@ -4,7 +4,11 @@ format:
   html:
     embed-resources: true
 editor: visual
-authors: "s132347(Sofie Emilie Hagelund), s253710(Henrique Gomes), s253689(Paula Meerjanssen), s252750(Shuyue Zhang), s253719(Eszter Hudra)"
+authors: "s132347 (Sofie Emilie Hagelund),<br>
+          s253710 (Henrique Gomes),<br>
+          s253689 (Paula Meerjanssen),<br>
+          s252750 (Shuyue Zhang),<br>
+          s253719 (Eszter Hudra)"
 ---
 
 ## Load Libraries
@@ -60,23 +64,31 @@ pca_fit %>%
   labs(
     title = "Projection of Tumor Samples onto the First Two Principal Components"
   )
-
-  
-  
 ```
 
-The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two principal components (PC1 and PC2). The x-axis represents the first Principle Component, and the y-axis represents the second Principle Component. Clustering of data indicates that the PCA captures meaningful variation related to the outcome type.
+The graph contains sample data showing separation between benign (blue) and malignant (orange) outcomes. Each point represents one sample, positioned according to its scores on the first two Principal Components (PC1 and PC2). The x-axis represents the first Principle Component, and the y-axis represents the second Principle Component. Clustering of data indicates that the PCA captures meaningful variation related to the outcome type.
 
 ```{r}
 arrow_style <- arrow(
-  angle = 20, ends = "first", type = "closed", length = grid::unit(8, "pt")
-)
+  angle = 20,
+  ends = "first",
+  type = "closed",
+  length = grid::unit(8,
+                      "pt"
+                      )
+  )
 
 pca_fit %>%
   tidy(matrix = "rotation") %>%
-  pivot_wider(names_from = "PC", names_prefix = "PC", values_from = "value") %>%
+  pivot_wider(names_from = "PC",
+              names_prefix = "PC",
+              values_from = "value"
+              ) %>%
   ggplot(aes(PC1, PC2)) +
-  geom_segment(xend = 0, yend = 0, arrow = arrow_style) +
+  geom_segment(xend = 0,
+               yend = 0,
+               arrow = arrow_style
+               ) +
   geom_text_repel(
     aes(label = column),
     nudge_x = -0.02,
@@ -85,7 +97,8 @@ pca_fit %>%
     color = "#663399",
     size = 2.75
   ) +
-  xlim(-1.25, .5) + ylim(-.5, 1) +
+  xlim(-1.25, .5) + 
+  ylim(-.5, 1) +
   coord_fixed() + 
   theme_minimal_grid(12) + 
   labs(
@@ -98,8 +111,12 @@ The above plot displays how the variables contribute to the first two Principle 
 ```{r}
 pca_fit %>%
   tidy(matrix = "eigenvalues") %>%
-  ggplot(aes(PC, percent)) +
-  geom_col(fill = "#56B4E9", alpha = 0.8) +
+  ggplot(aes(PC,
+             percent)
+         ) +
+  geom_col(fill = "#56B4E9",
+           alpha = 0.8
+           ) +
   scale_x_continuous(breaks = 1:9) +
   scale_y_continuous(
     labels = scales::percent_format(),
@@ -107,8 +124,8 @@ pca_fit %>%
   ) +
   theme_minimal_hgrid(12) +
   labs(
-    title = "Variance of principle components"
+    title = "Variance of Principle Components"
   )
 ```
 
-The bar plot shows the percentage of variance captured by each principle component. The x-axis represents the components, and the y-axis indicates the percentage of the variance. The PC1 is about 65% of the total variance, followed by PC2 with about 9%. This means that most of the data can be summarized using the first two components.
+The bar plot shows the percentage of variance captured by each Principal Component. The x-axis represents the components, and the y-axis indicates the percentage of the variance. The PC1 is about 65% of the total variance, followed by PC2 with about 9%. This means that most of the data can be summarised using the first two components.
